@@ -8,6 +8,7 @@ mermaidCopygraph TD
     D[Express Routes] -->|路由| A
     E[Middlewares] -->|處理| D
     B -->|使用| F[Utils]
+
 專案結構
 Copysrc/
 ├── abstract/       # 抽象類別
@@ -35,6 +36,8 @@ Copysrc/
     ├── deepValid.ts
     ├── MongoDB.ts
     └── resp.ts
+
+
 資料結構
 typescriptCopyinterface Student {
     _id?: string,          // MongoDB ID
@@ -47,6 +50,8 @@ typescriptCopyinterface Student {
     Email: string,        // 電子郵件
     absences?: number     // 缺席次數（選填）
 }
+
+
 API 規格
 Base URL: http://127.0.0.1:2083/api/v1/user
 typescriptCopyexport enum api {
@@ -56,6 +61,8 @@ typescriptCopyexport enum api {
     updateStudent = "http://127.0.0.1:2083/api/v1/user/updateNameById",
     deleteStudent = "http://127.0.0.1:2083/api/v1/user/deleteById"
 }
+
+
 1. 查詢所有學生
 
 路徑：/findAll
@@ -67,6 +74,8 @@ typescriptCopy{
     message: "find success",
     body: Student[]
 }
+
+
 2. 查詢單一學生
 
 路徑：/getStudent
@@ -78,6 +87,8 @@ typescriptCopy{
     message: "success",
     body: Student
 }
+
+
 3. 新增學生
 
 路徑：/insertOne
@@ -90,6 +101,8 @@ typescriptCopy{
     message: "success",
     body: Student
 }
+
+
 4. 更新學生姓名
 
 路徑：/updateNameById
@@ -108,6 +121,8 @@ typescriptCopy{
     message: "success",
     body: UpdateResult
 }
+
+
 5. 刪除學生
 
 路徑：/deleteById
